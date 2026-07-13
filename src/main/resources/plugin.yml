@@ -1,0 +1,11 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+author: fulcanelly
+api-version: 1.16
+
+depend:
+  - tg-bridge
+  - DiscordSRV
+
+main: me.fulcanelly.tgbridge.discordviamc.DiscordViaMcPlugin
