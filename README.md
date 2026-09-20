@@ -24,7 +24,7 @@ The adapter declares both `tg-bridge` and `DiscordSRV` as required dependencies 
 
 ### 1. Configure tg-bridge and Telegram
 
-Configure [tg-bridge](https://github.com/fulcanelly/mctg-bridge/blob/master/readme.better.md) and attach the target Telegram group first.
+Configure [tg-bridge](https://github.com/fulcanelly/mctg-bridge) and attach the target Telegram group first.
 
 The target Telegram group must be the group linked by `tg-bridge`; the adapter ignores messages from other Telegram chats.
 
@@ -65,27 +65,19 @@ telegram: Alex: Hello from Telegram
 
 Telegram commands such as `/list` and `/uptime` remain bot commands and are not mirrored to Discord.
 
-## Troubleshooting
+## Verify installation
 
-### Discord messages do not appear in Telegram
+Send a normal message in each connected channel and confirm the three-way flow:
 
-- Confirm that `plugins/tg-bridge/config.yml` has a non-empty `chat_id`.
-- Complete the `/attach <code>` flow in the intended Telegram group.
-- Restart the server after attaching the group.
+- Discord -> Minecraft and Telegram
+- Minecraft -> Discord and Telegram
+- Telegram -> Minecraft and Discord
 
-### Telegram messages do not appear in Discord
+If one direction is missing, check that:
 
-- Confirm that DiscordSRV is connected to Discord.
-- Configure DiscordSRV's main text channel or game-channel mapping.
-- Check the server log for:
-
-```text
-DiscordSRV main text channel is not configured; Telegram to Discord mirror is disabled
-```
-
-### DiscordSRV or tg-bridge is missing
-
-Install both required plugins before installing this adapter. The dependency declarations are in `src/main/resources/plugin.yml`.
+- `tg-bridge` has a configured `chat_id` for the intended Telegram group.
+- DiscordSRV is connected and has a configured main text channel or game-channel mapping.
+- Both required plugins are installed and the server was restarted after configuration.
 
 ## Source
 
