@@ -1,4 +1,4 @@
-# tg-bridge-discord-via-mc
+# tg2dc via mc
 
 A Spigot/Paper plugin that completes a three-way Minecraft Discord Telegram bridge: Discord <-> Minecraft <-> Telegram. It connects [tg-bridge](https://github.com/fulcanelly/mctg-bridge) with [DiscordSRV](https://www.spigotmc.org/resources/discordsrv.18494/) without a separate proxy service.
 
